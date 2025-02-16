@@ -1,0 +1,324 @@
+body{
+    font-family: "Plus Jakarta Sans", serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+    flex: 1;
+}
+.card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    object-fit: cover !important;
+    width: 100% !important;
+}
+.card-text{
+    font-weight: 400 !important;
+}
+.card-img-top{
+    height: 20rem !important;
+}
+.listings-link{
+    text-decoration: none;
+}
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: wheat;
+}
+/* Add BTN */
+.add-btn{
+    background-color: #222222 !important;
+    border: none !important;
+}
+.add-btn:hover{
+    background-color: #fe424d !important;
+}
+
+/* ///////////////////////////////////////////////////////////////// */
+/* Navbar Styles */
+.navbar {
+    height: 5rem; /* Fixed height for consistency */
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space out items */
+    padding: 0 1rem;
+}
+
+/* Navbar Brand Icon */
+.fa-compass {
+    color: #fe424d; /* Bright red for branding */
+    font-size: 2rem; /* Large icon size */
+    transition: transform 0.3s ease-in-out;
+}
+
+.fa-compass:hover {
+    transform: rotate(30deg); /* Add a playful hover effect */
+}
+
+/* Navbar Links */
+.nav-link {
+    color: #222222 !important; /* Dark color for better readability */
+    font-size: 1rem; /* Consistent font size */
+    margin: 0 1rem; /* Add spacing between links */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    text-decoration: none; /* Remove underline */
+}
+
+.nav-link:hover {
+    color: #fe424d !important; /* Match hover color with brand icon */
+    border-bottom: 2px solid #fe424d; /* Underline effect */
+}
+
+.nav-link.active {
+    font-weight: bold; /* Highlight active link */
+    border-bottom: 2px solid #fe424d; /* Persistent underline for active */
+}
+
+/* Toggler Icon */
+.navbar-toggler {
+    border: none; /* Remove border for a clean look */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23222222' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    /* Custom dark toggler icon */
+
+}
+
+/* Listings Options Background Color for Toggle Button */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        background-color: #e7e7e7; /* Light background for the menu */
+        padding: 1rem; /* Add padding for better spacing */
+        border-radius: 0.5rem; /* Optional: rounded corners */
+        width: 50%; /* Restrict the width to 50% */
+        position: absolute; /* Use absolute positioning */
+        top: 5rem; /* Adjust dropdown position below the navbar */
+        right: 0; /* Align the dropdown to the right */
+        z-index: 1050; /* Ensure it's above other elements */
+    }
+
+    .nav-link {
+        color: #222222 !important; /* Ensure text is visible */
+        padding: 0.5rem; /* Add padding for each link */
+        text-align: center; /* Center align the text */
+    }
+    /* .nav-link:hover {
+        color: #fe424d !important; 
+        border: 2px solid #fe424d; 
+        border-radius: 1rem;
+    } */
+
+    .nav-link:hover {
+        background-color: #fe424d; 
+        color: #ffffff !important; 
+        border-radius: 1.5rem; 
+    }
+}
+/* Nevbar Search  */
+/* //////////////////////////////////////////////////////////////////// */
+
+/* Footer */
+#footer {
+    background-color: #ebebeb; /* Light gray background for the footer */
+    color: #343a40; /* Dark text for contrast */
+    padding: 2rem 0; /* Padding for spacing */
+}
+
+#footer-socials a {
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    color: #6c757d; /* Default light gray icon color */
+}
+
+#footer-socials a i {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#footer-socials a:hover i {
+    transform: scale(1.2); /* Slight zoom effect */
+}
+
+#footer-socials a[href*="facebook"]:hover i {
+    color: #3b5998; /* Facebook brand color */
+}
+
+#footer-socials a[href*="instagram"]:hover i {
+    color: #e4405f; /* Instagram brand color */
+}
+
+#footer-socials a[href*="x.com"]:hover i {
+    color: #1da1f2; /* Twitter/X brand color */
+}
+
+#footer-socials a[href*="linkedin"]:hover i {
+    color: #0a66c2; /* LinkedIn brand color */
+}
+
+#footer-copyright {
+    color: #6c757d; /* Light gray text for copyright */
+}
+#footer-copyright:hover{
+    color: #fe424d; 
+    transition: color 0.3s ease;
+}
+
+#footer-links a {
+    color: #6c757d !important; 
+    transition: color 0.3s ease;
+}
+
+#footer-links a:hover {
+    color: #fe424d !important;
+    border-bottom: 1px solid #fe424d;
+}
+
+
+/* Skeleton animation */
+@keyframes shimmer {
+    0% { background-position: -200px 0; }
+    100% { background-position: 200px 0; }
+}
+
+/* Skeleton card styling */
+.skeleton-card {
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+/* Skeleton image placeholder */
+.skeleton-img {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+    background-size: 400px 100%;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 10px;
+}
+
+/* Skeleton text placeholders */
+.skeleton-text {
+    width: 80%;
+    height: 15px;
+    margin: 10px 0;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+    background-size: 400px 100%;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 5px;
+}
+
+.skeleton-text.short {
+    width: 50%;
+}
+
+
+/* Index page css */
+
+/* Fixed Filter Bar Below Navbar */
+        #filter-container {
+            position: fixed;
+            top: 80px; /* Adjust based on navbar height */
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 10px 15px;
+            border-bottom: 2px solid #ddd;
+            z-index: 1000;
+        }
+
+        /* Icons Section */
+        #filters {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: nowrap;
+            overflow: hidden;
+        }
+
+        .filter {
+            text-align: center;
+            opacity: 0.7;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .filter:hover { opacity: 1; }
+        .filter p { font-size: 0.8rem; margin: 0; }
+
+        /* GST Toggle Container */
+        .gst-toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #ccc; /* Adjust color as needed */
+            padding: 8px; /* Optional: Adds spacing inside the border */
+            border-radius: 15px; /* Optional: Rounds the corners */
+        }
+        
+
+        .gst-toggle-btn {
+            width: 40px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .gst-toggle-btn::before {
+            content: "";
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 1px;
+            left: 2px;
+            transition: 0.3s;
+        }
+
+        .gst-toggle-btn.active { background-color: #007bff; }
+        .gst-toggle-btn.active::before { left: 20px; }
+
+        /* Hide Text on Small Screens */
+        @media screen and (max-width: 768px) {
+            .gst-toggle-container span {
+                display: none;
+            }
+            .gst-toggle-container::before {
+                content: "GST";
+                font-size: 14px;
+                font-weight: bold;
+                /* margin-right: 1px; */
+            }
+        }
+
+        /* Responsive: Hide extra icons on smaller screens */
+        @media screen and (max-width: 1024px) {
+            .filter:nth-child(n+7) { display: none; } /* Hide after 8 icons */
+        }
+
+        @media screen and (max-width: 360px) {
+            .filter:nth-child(n+4) { display: none; } /* Hide after 3 icons */
+        }
+
+        @media screen and (max-width: 768px) {
+            .filter:nth-child(n+5) { display: none; } /* Hide after 6 icons */
+        }
+
+        /* Push main content down to prevent overlap */
+        .content { margin-top: 100px; }

@@ -1,0 +1,55 @@
+<% layout("/layouts/boilerplate") %>
+<body class="bg-light">
+    <div class="container my-5">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Edit This Listing</h4>
+            </div>
+            <div class="card-body">
+                <form method="post" action="/listings/<%= show._id %>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title:</label>
+                        <input type="text" id="title" name="listings[title]" class="form-control" value="<%= show.title %>" required>
+                        <div class="invalid-feedback">Please enter a title.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description:</label>
+                        <textarea id="description" name="listings[description]" class="form-control" rows="3" required><%= show.description %></textarea>
+                        <div class="invalid-feedback">Please provide a short description.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="showImage" class="form-label">Original Image:</label>
+                        <img id="showImage" class="showImage" src="<%= originalImage  %>" alt="">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Uplode New Image:</label>
+                        <input  type="file" id="image" name="listings[image]" class="form-control" value="<%= show.image %>" accept="['.jpg','.png','jpeg']" >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price:</label>
+                        <input type="number" id="price" name="listings[price]" class="form-control" value="<%= show.price %>" required min="1">
+                        <div class="invalid-feedback">Please provide a valid price.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Location:</label>
+                        <input type="text" id="location" name="listings[location]" class="form-control" value="<%= show.location %>" required>
+                        <div class="invalid-feedback">Please provide a location.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="country" class="form-label">Country:</label>
+                        <input type="text" id="country" name="listings[country]" class="form-control" value="<%= show.country %>" required>
+                        <div class="invalid-feedback">Please provide a country.</div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

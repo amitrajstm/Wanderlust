@@ -1,0 +1,10 @@
+<% layout("/layouts/boilerplate") %>
+<link rel="stylesheet" href="../css/error.css">
+<body>
+  <div id="error-container">
+    <i id="error-icon" class="fa-solid fa-triangle-exclamation"></i>
+    <div id="error-code"><%= statusCode %></div>
+    <div id="error-message">Oops! <%=message %> </div>
+    <a id="back-link" href="/listings">Go Back Home</a>
+  </div>
+</body>
