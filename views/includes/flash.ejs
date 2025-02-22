@@ -1,0 +1,34 @@
+<% if(success && success.length) { %>
+    <div class="alert alert-success alert-dismissible fade show col-3 offset-4" role="alert" id="successAlert">
+      <%= success %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <script>
+      setTimeout(function() {
+        var alertElement = document.getElementById('successAlert');
+        if (alertElement) {
+          let closeButton = alertElement.querySelector('.btn-close');
+          closeButton.click();
+        }
+      }, 3000); // Close after 5 seconds
+    </script>
+  <% } %>
+  
+
+
+  <% if(error && error.length) { %>
+    <div class="alert alert-danger alert-dismissible fade show col-3 offset-4" role="alert" id="successAlert">
+      <%= error %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <script>
+      setTimeout(function() {
+        var alertElement = document.getElementById('successAlert');
+        if (alertElement) {
+          let closeButton = alertElement.querySelector('.btn-close');
+          closeButton.click();
+        }
+      }, 5000); // Close after 5 seconds
+    </script>
+  <% } %>
+  

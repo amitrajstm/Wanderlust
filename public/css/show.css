@@ -1,0 +1,27 @@
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .review-form {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        #map {
+            height: 300px;
+            width: 100%;
+            border: 2px solid black;
+            border-radius: 10px;
+            text-align: center;
+            padding-top: 100px;
+            color: rgb(56, 255, 80);
+        }

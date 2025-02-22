@@ -1,0 +1,66 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <!-- Sticky Icons + GST Toggle BELOW Navbar -->
+    <div id="filter-container">
+        <div id="filters">
+            <div class="filter"><div><i class="fa-solid fa-fire"></i></div><p>Trending</p></div>
+            <div class="filter"><div><i class="fa-solid fa-bed"></i></div><p>Rooms</p></div>
+            <div class="filter"><div><i class="fa-solid fa-mountain-city"></i></div><p>Iconic City</p></div>
+            <div class="filter"><div><i class="fa-solid fa-mountain"></i></div><p>Mountain</p></div>
+            <div class="filter"><div><i class="fa-solid fa-umbrella-beach"></i></div><p>Beach</p></div>
+            <div class="filter"><div><i class="fa-brands fa-fort-awesome"></i></div><p>Castles</p></div>
+            <div class="filter"><div><i class="fa-solid fa-person-swimming"></i></div><p>Amazing Pools</p></div>
+            <div class="filter"><div><i class="fa-solid fa-tractor"></i></div><p>Farms</p></div>
+            <div class="filter"><div><i class="fa-solid fa-golf-ball-tee"></i></div><p>Golfing</p></div>
+            <div class="filter"><div><i class="fa-solid fa-campground"></i></div><p>Camping</p></div>
+            <div class="filter"><div><i class="fa-solid fa-skiing"></i></div><p>Skiing</p></div>
+            <div class="filter"><div><i class="fa-solid fa-water"></i></div><p>Waterfront</p></div>
+        </div>
+
+        <div class="gst-toggle-container">
+            <span class="gst-label">Display total before taxes</span>
+            <div id="gstToggle" class="gst-toggle-btn"></div>
+        </div>
+    </div>
+
+    <!-- Listings -->
+    <div class="content">
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+            <% for(let data of allListings){ %>
+                <a href="/listings/<%= data._id %>" class="listings-link">
+                    <div class="card col">
+                        <img src="<%= data.image.url %>" class="card-img-top" alt="Listings">
+                        <div class="card-img-overlay"></div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <b><%= data.title %></b> <br>
+                                <span class="price" data-price="<%= data.price %>">
+                                    &#8377; <%= data.price.toLocaleString("en-IN") %> / night
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            <% } %> 
+        </div>
+    </div>
+
+    <script>
+        const gstToggle = document.getElementById("gstToggle");
+        const priceElements = document.querySelectorAll(".price");
+
+        gstToggle.addEventListener("click", function () {
+            this.classList.toggle("active");
+
+            priceElements.forEach(priceElement => {
+                let basePrice = parseFloat(priceElement.dataset.price);
+                let newPrice = gstToggle.classList.contains("active") 
+                    ? basePrice * 1.18 
+                    : basePrice;
+
+                priceElement.innerHTML = `&#8377; ${newPrice.toLocaleString("en-IN")} / night` 
+                    + (gstToggle.classList.contains("active") ? " with 18% GST" : "");
+            });
+        });
+    </script>
+</body>
